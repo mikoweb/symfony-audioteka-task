@@ -7,5 +7,8 @@
         <role>ROLE_PRODUCT_CREATE</role>
         <role>ROLE_PRODUCT_UPDATE</role>
         <role>ROLE_PRODUCT_DELETE</role>
+        <role>ROLE_CART_CREATE</role>
+        <role>ROLE_CART_ADD_ITEMS</role>
+        <role>ROLE_CART_REMOVE_ITEMS</role>
     </group>
 </groups>

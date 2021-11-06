@@ -31,10 +31,7 @@ abstract class GroupAbstract implements GroupInterface, SoftDeleteableInterface,
      */
     protected int $id;
 
-    /**
-     * @var ArrayCollection
-     */
-    protected Collection $roles;
+    protected ArrayCollection|Collection|array $roles;
 
     /**
      * @var string
@@ -43,10 +40,7 @@ abstract class GroupAbstract implements GroupInterface, SoftDeleteableInterface,
      */
     protected string $name;
 
-    /**
-     * @var ArrayCollection
-     */
-    protected Collection $users;
+    protected ArrayCollection|Collection|array $users;
 
     /**
      * @var string

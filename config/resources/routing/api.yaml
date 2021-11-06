@@ -6,3 +6,7 @@ app_api_index:
 app_api_products:
     resource: api/products.yaml
     prefix: /products
+
+app_api_cart:
+    resource: api/cart.yaml
+    prefix: /cart

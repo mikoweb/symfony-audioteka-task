@@ -5,6 +5,9 @@
     </group>
     <group tag="cart">
         <role role="ROLE_CART_ACCESS" />
+        <role role="ROLE_CART_CREATE" />
+        <role role="ROLE_CART_ADD_ITEMS" />
+        <role role="ROLE_CART_REMOVE_ITEMS" />
     </group>
     <group tag="products">
         <role role="ROLE_PRODUCTS_CATALOG_ACCESS" />

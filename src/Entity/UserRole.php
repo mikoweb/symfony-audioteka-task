@@ -30,12 +30,12 @@ class UserRole extends RoleAbstract implements RoleInterface
      *
      * @ORM\ManyToMany(targetEntity="UserGroup", mappedBy="roles")
      */
-    private Collection $groups;
+    private ArrayCollection|Collection|array $groups;
 
     /**
-     * @return ArrayCollection|UserGroup[]
+     * @return ArrayCollection|Collection|UserGroup[]
      */
-    public function getGroups(): Collection
+    public function getGroups(): ArrayCollection|Collection|array
     {
         return $this->groups;
     }

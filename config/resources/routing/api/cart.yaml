@@ -1,0 +1,24 @@
+app_api_cart_index:
+    path: /
+    controller: App\Controller\CartController::index
+    methods: [GET]
+
+app_api_cart_create:
+    path: /create
+    controller: App\Controller\CartController::create
+    methods: [POST]
+
+app_api_cart_show:
+    path: /{id}
+    controller: App\Controller\CartController::show
+    methods: [GET]
+
+app_api_cart_add_items:
+    path: /add-items/{id}
+    controller: App\Controller\CartController::addItems
+    methods: [POST]
+
+app_api_cart_remove_items:
+    path: /remove-items/{id}
+    controller: App\Controller\CartController::removeItems
+    methods: [DELETE]

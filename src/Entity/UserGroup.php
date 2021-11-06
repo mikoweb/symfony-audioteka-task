@@ -33,12 +33,12 @@ class UserGroup extends GroupAbstract implements GroupInterface
      *     inverseJoinColumns={@ORM\JoinColumn(name="role_id", referencedColumnName="id")}
      * )
      */
-    protected Collection $roles;
+    protected ArrayCollection|Collection|array $roles;
 
     /**
      * @var ArrayCollection|User[]
      *
      * @ORM\ManyToMany(targetEntity="User", mappedBy="groups")
      */
-    protected Collection $users;
+    protected ArrayCollection|Collection|array $users;
 }

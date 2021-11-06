@@ -91,7 +91,7 @@ class User implements UserInterface, TimestampableInterface, SoftDeleteableInter
      *     inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
      * )
      */
-    private Collection $groups;
+    private Collection|ArrayCollection|array $groups;
 
     public function __construct()
     {
@@ -224,9 +224,9 @@ class User implements UserInterface, TimestampableInterface, SoftDeleteableInter
     }
 
     /**
-     * @return UserGroup[]|ArrayCollection
+     * @return UserGroup[]|ArrayCollection|Collection
      */
-    public function getGroups(): Collection
+    public function getGroups(): Collection|ArrayCollection|array
     {
         return $this->groups ?: $this->groups = new ArrayCollection();
     }
