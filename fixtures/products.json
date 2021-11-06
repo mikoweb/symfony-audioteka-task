@@ -1,0 +1,26 @@
+[
+    {
+        "name": "The Godfather",
+        "price": 59.99
+    },
+    {
+        "name": "Steve Jobs",
+        "price": 49.95
+    },
+    {
+        "name": "The Return of Sherlock Holmes",
+        "price": 39.99
+    },
+    {
+        "name": "The Little Prince",
+        "price": 29.99
+    },
+    {
+        "name": "I Hate Myselfie!",
+        "price": 19.99
+    },
+    {
+        "name": "The Trial",
+        "price": 9.99
+    }
+]
