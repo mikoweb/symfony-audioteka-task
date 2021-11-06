@@ -7,3 +7,18 @@ app_api_products_show:
     path: /{id}
     controller: App\Controller\ProductsController::show
     methods: [GET]
+
+app_api_products_create:
+    path: /create
+    controller: App\Controller\ProductsController::create
+    methods: [POST]
+
+app_api_products_update:
+    path: /update/{id}
+    controller: App\Controller\ProductsController::update
+    methods: [PUT]
+
+app_api_products_delete:
+    path: /delete/{id}
+    controller: App\Controller\ProductsController::delete
+    methods: [DELETE]

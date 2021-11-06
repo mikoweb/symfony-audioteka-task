@@ -8,5 +8,8 @@
     </group>
     <group tag="products">
         <role role="ROLE_PRODUCTS_CATALOG_ACCESS" />
+        <role role="ROLE_PRODUCT_CREATE" />
+        <role role="ROLE_PRODUCT_UPDATE" />
+        <role role="ROLE_PRODUCT_DELETE" />
     </group>
 </roles>

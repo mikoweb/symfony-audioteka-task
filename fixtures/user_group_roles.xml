@@ -4,5 +4,8 @@
         <role>ROLE_API_USER</role>
         <role>ROLE_CART_ACCESS</role>
         <role>ROLE_PRODUCTS_CATALOG_ACCESS</role>
+        <role>ROLE_PRODUCT_CREATE</role>
+        <role>ROLE_PRODUCT_UPDATE</role>
+        <role>ROLE_PRODUCT_DELETE</role>
     </group>
 </groups>

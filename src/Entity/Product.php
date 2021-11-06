@@ -25,6 +25,8 @@ use Symfony\Component\Uid\UuidV4;
  * @UniqueEntity(fields={"slug"}, errorPath="slug")
  * @UniqueEntity(fields={"id"}, errorPath="id")
  *
+ * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=true)
+ *
  * @ExclusionPolicy("all")
  */
 class Product implements TimestampableInterface, SoftDeleteableInterface
@@ -42,6 +44,7 @@ class Product implements TimestampableInterface, SoftDeleteableInterface
 
     /**
      * @ORM\Column(type="string", name="name", nullable=false, length=255)
+     * @Assert\NotBlank()
      *
      * @Expose
      */
@@ -57,6 +60,7 @@ class Product implements TimestampableInterface, SoftDeleteableInterface
 
     /**
      * @ORM\Column(name="price", type="decimal", precision=8, scale=2, nullable=false)
+     * @Assert\NotBlank()
      *
      * @Assert\GreaterThanOrEqual(value="0");
      *
