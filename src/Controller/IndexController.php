@@ -4,16 +4,13 @@ namespace App\Controller;
 
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class IndexController extends AbstractFOSRestController
 {
+    #[IsGranted('ROLE_API_USER')]
     public function index(): Response
     {
-        return $this->handleView($this->view(['Hello World!']));
-    }
-
-    public function test(): Response
-    {
-        return $this->handleView($this->view(['test']));
+        throw $this->createAccessDeniedException();
     }
 }

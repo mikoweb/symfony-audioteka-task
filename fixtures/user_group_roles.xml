@@ -3,5 +3,6 @@
     <group reference="Group.NormalApiUser">
         <role>ROLE_API_USER</role>
         <role>ROLE_CART_ACCESS</role>
+        <role>ROLE_PRODUCTS_CATALOG_ACCESS</role>
     </group>
 </groups>

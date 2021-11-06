@@ -1,0 +1,9 @@
+app_api_products_index:
+    path: /
+    controller: App\Controller\ProductsController::index
+    methods: [GET]
+
+app_api_products_show:
+    path: /{id}
+    controller: App\Controller\ProductsController::show
+    methods: [GET]

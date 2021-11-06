@@ -59,6 +59,8 @@ class Product implements TimestampableInterface, SoftDeleteableInterface
      * @ORM\Column(name="price", type="decimal", precision=8, scale=2, nullable=false)
      *
      * @Assert\GreaterThanOrEqual(value="0");
+     *
+     * @Expose
      */
     private float $price;
 

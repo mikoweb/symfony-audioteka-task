@@ -6,4 +6,7 @@
     <group tag="cart">
         <role role="ROLE_CART_ACCESS" />
     </group>
+    <group tag="products">
+        <role role="ROLE_PRODUCTS_CATALOG_ACCESS" />
+    </group>
 </roles>
