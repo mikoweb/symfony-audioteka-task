@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roles>
+    <group tag="api">
+        <role role="ROLE_API_USER" />
+    </group>
+    <group tag="cart">
+        <role role="ROLE_CART_ACCESS" />
+    </group>
+</roles>

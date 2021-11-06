@@ -5,7 +5,7 @@ namespace App\Entity\Interfaces;
 interface GroupInterface
 {
     const NAME_ADMIN = 'groups.names.admin';
-    const NAME_NORMAL_USER = 'groups.names.normal_users';
+    const NAME_NORMAL_API_USER = 'groups.names.normal_api_users';
 
     public function __toString(): string;
     public function getName(): string;

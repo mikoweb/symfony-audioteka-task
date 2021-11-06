@@ -124,6 +124,11 @@ class User implements UserInterface, TimestampableInterface, SoftDeleteableInter
         return $this->username;
     }
 
+    public function getUserIdentifier(): ?string
+    {
+        return $this->username;
+    }
+
     public function setUsername(?string $username): self
     {
         $this->username = $username;
