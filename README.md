@@ -132,6 +132,10 @@ Body content (multiple or single):
 ]
 ```
 
+## Tests
+
+    php ./vendor/bin/phpunit
+
 ## Docker
 
 * https://github.com/ger86/symfony-docker

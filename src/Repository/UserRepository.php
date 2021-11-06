@@ -7,6 +7,7 @@ namespace App\Repository;
 
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -35,5 +36,21 @@ class UserRepository extends ServiceEntityRepository
             'apiKey' => $apiKey,
         ]);
     }
-}
 
+    public function getTestUser(): User
+    {
+        $users = $this->createQueryBuilder('u')
+            ->where('u.apiKey IS NOT NULL')
+            ->orderBy('u.createdAt', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+
+        if (count($users) === 0) {
+            throw new NoResultException();
+        }
+
+        return $users[0];
+    }
+}
