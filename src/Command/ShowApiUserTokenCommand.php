@@ -50,7 +50,9 @@ class ShowApiUserTokenCommand extends Command
                 ->getToken($config->signer(), $config->signingKey())
             ;
 
-            $io->success("Api token: {$token->toString()}");
+            $io->block('TOKEN:');
+            $io->block($token->toString());
+            $io->success("Api token found");
         } else {
             $io->error("User $username not found");
         }

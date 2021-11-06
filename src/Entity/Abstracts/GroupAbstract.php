@@ -112,13 +112,17 @@ abstract class GroupAbstract implements GroupInterface, SoftDeleteableInterface,
 
     public function getRoles(): array
     {
-        $roles = $this->roles->toArray();
+        $roles = [];
+        foreach ($this->roles as $role) {
+            $roles[] = (string)$role;
+        }
+
         $roles[] = $this->getGroupRole();
 
         return array_unique($roles);
     }
 
-    public function removeRole($role): self
+    public function removeRole(RoleInterface $role): self
     {
         $this->roles->removeElement($role);
 

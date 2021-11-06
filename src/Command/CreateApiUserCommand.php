@@ -65,14 +65,16 @@ class CreateApiUserCommand extends Command
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 
-            $config = Configuration::forSymmetricSigner(new Sha256(), InMemory::plainText($user->getApiKey()));
+            $config = Configuration::forSymmetricSigner(new Sha256(), InMemory::plainText(''));
 
             $token = $config->builder()
                 ->withClaim('api_key', $user->getApiKey())
                 ->getToken($config->signer(), $config->signingKey())
             ;
 
-            $io->success("Api token: {$token->toString()}");
+            $io->block('TOKEN:');
+            $io->block($token->toString());
+            $io->success("Api token generated");
         } else {
             $io->warning("User $username is exists. Use app:show-user-api-token command to show token.");
         }

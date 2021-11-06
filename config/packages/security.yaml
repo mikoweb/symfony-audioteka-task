@@ -10,15 +10,23 @@ security:
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
 
     providers:
-        users_in_memory: { memory: null }
+        api_key:
+            id: App\Security\ApiKeyProvider
+        database:
+            entity:
+                class: App\Entity\User
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            lazy: true
-            provider: users_in_memory
+            pattern: ^/
+            stateless: true
+            provider: api_key
+            guard:
+                authenticators:
+                    - App\Security\ApiKeyAuthenticator
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -29,5 +37,4 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-    # - { path: ^/admin, roles: ROLE_ADMIN }
-    # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/, roles: ROLE_API_USER }
