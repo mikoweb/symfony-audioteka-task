@@ -83,6 +83,8 @@ abstract class AbstractGroupFixture extends AbstractFixture
         if ($result = $manager->getRepository($this->getGroupClass())->findOneBy([
             'name' => $name
         ])) {
+            $result->setGroupRole($groupRole);
+            $result->setIrremovable($irremovable);
             $manager->persist($result);
 
             return $result;

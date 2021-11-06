@@ -14,7 +14,7 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\GroupRepository")
  * @ORM\Table(name="user_groups")
  *
  * @ORM\HasLifecycleCallbacks

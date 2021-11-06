@@ -228,6 +228,39 @@ class User implements UserInterface, TimestampableInterface, SoftDeleteableInter
      */
     public function getGroups(): Collection
     {
-        return $this->groups;
+        return $this->groups ?: $this->groups = new ArrayCollection();
+    }
+
+    public function getGroupNames(): array
+    {
+        $names = [];
+        foreach ($this->getGroups() as $group) {
+            $names[] = $group->getName();
+        }
+
+        return $names;
+    }
+
+    public function hasGroup(string $name): bool
+    {
+        return in_array($name, $this->getGroupNames());
+    }
+
+    public function addGroup(UserGroup $group): self
+    {
+        if (!$this->getGroups()->contains($group)) {
+            $this->getGroups()->add($group);
+        }
+
+        return $this;
+    }
+
+    public function removeGroup(UserGroup $group): self
+    {
+        if ($this->getGroups()->contains($group)) {
+            $this->getGroups()->removeElement($group);
+        }
+
+        return $this;
     }
 }

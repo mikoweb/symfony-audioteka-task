@@ -37,7 +37,7 @@ class UserGroupsFixture extends AbstractGroupFixture implements
         $normalApiUser = $this->createGroup(
             $manager,
             GroupInterface::NAME_NORMAL_API_USER,
-            RoleInterface::ROLE_USER
+            RoleInterface::ROLE_API_USER
         );
 
         $this->setReference('Group.NormalApiUser', $normalApiUser);

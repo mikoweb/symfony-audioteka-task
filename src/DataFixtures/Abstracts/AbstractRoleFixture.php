@@ -55,6 +55,8 @@ abstract class AbstractRoleFixture extends AbstractFixture
                 throw new \UnexpectedValueException($role . ' is exists.');
             }
 
+            $result->setName($name);
+            $result->setTag($tag);
             $manager->persist($result);
             $this->setReference('Role.' . $role, $result);
 
