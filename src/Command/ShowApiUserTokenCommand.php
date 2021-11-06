@@ -1,4 +1,7 @@
 <?php
+/*
+ * Copyright (c) Rafał Mikołajun 2021.
+ */
 
 namespace App\Command;
 
