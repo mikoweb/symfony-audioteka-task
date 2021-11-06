@@ -1,3 +1,4 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+app_api:
+    resource: resources/routing/api.yaml
+    prefix: /
+    defaults: {_format: json}
