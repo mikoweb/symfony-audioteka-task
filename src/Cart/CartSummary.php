@@ -19,13 +19,14 @@ final class CartSummary
 
     public function __construct(Cart $cart)
     {
+        $this->totalPrice = 0;
         $this->cart = $cart;
         $this->generate();
     }
 
     public function getTotalPrice(): float
     {
-        return $this->totalPrice;
+        return $this->totalPrice ?? 0;
     }
 
     private function generate(): void
@@ -33,6 +34,6 @@ final class CartSummary
         $items = $this->cart->getItems()->toArray();
         $this->totalPrice = array_reduce($items, function (?float $carry, CartItem $item) {
             return $carry + $item->sumPrice();
-        });
+        }) ?? 0;
     }
 }
